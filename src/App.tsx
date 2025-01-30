@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import { toast, Toaster } from 'react-hot-toast';
-import { checkMobileExists, saveUserSpin, getProbabilities } from './services/database';
-import type { WheelProbability } from './types';
+import { checkMobileExists, saveUserSpin } from './services/database';
 import logo from './logo.png';
 
-
-// Wheel configuration with prizes and styling
+// Wheel configuration with prizes, probabilities, and styling
 const wheelData = [
-  { option: '10% off', probablity: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
-  { option: '20% off', probablity: 0.1, style: { backgroundColor: '#ffffff', textColor: 'black' } },
-  { option: 'Free hoodie', probablity: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
-  { option: 'Mystery box', probablity: 0.1, style: { backgroundColor: '#ffffff', textColor: 'black' } },
-  { option: 'Free tshirt', probablity: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
-  { option: 'Sorry 😔 Life is unfair', probablity: 0.9, style: { backgroundColor: '#ffffff', textColor: 'black' } },
+  { option: '10% off', probability: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
+  { option: '20% off', probability: 0.1, style: { backgroundColor: '#ffffff', textColor: 'black' } },
+  { option: 'Free hoodie', probability: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
+  { option: 'Mystery box', probability: 0.1, style: { backgroundColor: '#ffffff', textColor: 'black' } },
+  { option: 'Free tshirt', probability: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
+  { option: 'Sorry 😔 Life is unfair', probability: 0.9, style: { backgroundColor: '#ffffff', textColor: 'black' } },
 ];
 
 const App: React.FC = () => {
@@ -26,24 +24,7 @@ const App: React.FC = () => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [hasSpun, setHasSpun] = useState(false);
-  const [weights, setWeights] = useState<number[]>([]);
   const [showCollectPrize, setShowCollectPrize] = useState(false);
-
-  // Load probabilities from Firebase on component mount
-  useEffect(() => {
-    const loadProbabilities = async () => {
-      try {
-        const probs = await getProbabilities();
-        const newWeights = probs.map(p => p.probability);
-        setWeights(newWeights);
-      } catch (error) {
-        console.error('Error loading probabilities:', error);
-        setWeights([0.2, 0.2, 0.15, 0.15, 0.15, 0.15]); // Default weights
-      }
-    };
-
-    loadProbabilities();
-  }, []);
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -76,8 +57,8 @@ const App: React.FC = () => {
       let sum = 0;
       let selectedIndex = 0;
       
-      for (let i = 0; i < weights.length; i++) {
-        sum += weights[i];
+      for (let i = 0; i < wheelData.length; i++) {
+        sum += wheelData[i].probability;
         if (random <= sum) {
           selectedIndex = i;
           break;
@@ -111,7 +92,7 @@ const App: React.FC = () => {
       <nav className="bg-black p-4 border-b border-white/10 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center px-4">
           <div className="flex items-center space-x-2">
-            <img src={logo} alt="Logo" className="h-8 w-auto" />
+            <img src={logo || "/placeholder.svg"} alt="Logo" className="h-8 w-auto" />
             <span className="text-xl font-bold">Welcome to Techno Be With You</span>
           </div>
         </div>
