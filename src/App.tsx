@@ -3,6 +3,8 @@ import { Wheel } from 'react-custom-roulette';
 import { toast, Toaster } from 'react-hot-toast';
 import { checkMobileExists, saveUserSpin, getProbabilities } from './services/database';
 import type { WheelProbability } from './types';
+import logo from './logo.png';
+
 
 // Wheel configuration with prizes and styling
 const wheelData = [
@@ -109,7 +111,7 @@ const App: React.FC = () => {
       <nav className="bg-black p-4 border-b border-white/10 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center px-4">
           <div className="flex items-center space-x-2">
-            <img src="src/Techno Logo Final NEW-01.png" alt="Logo" className="h-8 w-auto" />
+            <img src={logo} alt="Logo" className="h-8 w-auto" />
             <span className="text-xl font-bold">Welcome to Techno Be With You</span>
           </div>
         </div>
