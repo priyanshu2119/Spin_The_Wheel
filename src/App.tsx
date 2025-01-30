@@ -169,7 +169,7 @@ const App: React.FC = () => {
               onStopSpinning={() => {
                 setMustSpin(false);
                 if (showCollectPrize) {
-                  toast.success('Collect your prize from Electric Sole Store!');
+                  toast.success('Collect your prize from Techno Be With You Stall!');
                 }
               }}
               outerBorderColor="#ffffff"
