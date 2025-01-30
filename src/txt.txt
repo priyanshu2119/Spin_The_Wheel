@@ -1,0 +1,3 @@
+// Create two collections in Firestore:
+- user_spins: Stores user spin data
+- wheel_probabilities: Stores probability settings
