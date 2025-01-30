@@ -8,12 +8,12 @@ import logo from './logo.png';
 
 // Wheel configuration with prizes and styling
 const wheelData = [
-  { option: '10% off', style: { backgroundColor: '#000000', textColor: 'white' } },
-  { option: '20% off', style: { backgroundColor: '#ffffff', textColor: 'black' } },
-  { option: 'Free hoodie', style: { backgroundColor: '#000000', textColor: 'white' } },
-  { option: 'Mystery box', style: { backgroundColor: '#ffffff', textColor: 'black' } },
-  { option: 'Free tshirt', style: { backgroundColor: '#000000', textColor: 'white' } },
-  { option: 'Sorry 😔 Life is unfair', style: { backgroundColor: '#ffffff', textColor: 'black' } },
+  { option: '10% off', probablity: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
+  { option: '20% off', probablity: 0.1, style: { backgroundColor: '#ffffff', textColor: 'black' } },
+  { option: 'Free hoodie', probablity: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
+  { option: 'Mystery box', probablity: 0.1, style: { backgroundColor: '#ffffff', textColor: 'black' } },
+  { option: 'Free tshirt', probablity: 0.1, style: { backgroundColor: '#000000', textColor: 'white' } },
+  { option: 'Sorry 😔 Life is unfair', probablity: 0.9, style: { backgroundColor: '#ffffff', textColor: 'black' } },
 ];
 
 const App: React.FC = () => {
@@ -177,7 +177,7 @@ const App: React.FC = () => {
               radiusLineWidth={1}
               fontSize={16}
               textDistance={60}
-              spinDuration={0.8}
+              spinDuration={0.9}
             />
             <button
               onClick={handleSpinClick}
