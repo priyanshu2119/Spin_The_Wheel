@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import { toast, Toaster } from 'react-hot-toast';
 import { checkMobileExists, saveUserSpin } from './services/database';
