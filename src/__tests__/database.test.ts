@@ -8,10 +8,10 @@ jest.mock('../firebase', () => ({
 }));
 jest.mock('firebase/firestore', () => ({
   collection: jest.fn(),
-  addDoc: jest.fn(async () => ({ id: 'mockId' })),
+  addDoc: jest.fn(() => ({ id: 'mockId' })), // removed async
   query: jest.fn(),
   where: jest.fn(),
-  getDocs: jest.fn(async () => ({ empty: false, docs: [{ id: 'mockId', data: () => ({}) }] })),
+  getDocs: jest.fn(() => ({ empty: false, docs: [{ id: 'mockId', data: () => ({}) }] })), // removed async
   doc: jest.fn(),
   updateDoc: jest.fn(async () => {}),
 }));
