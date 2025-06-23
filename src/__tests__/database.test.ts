@@ -1,6 +1,6 @@
 // Unit tests for src/services/database.ts
-import { saveUserSpin, checkMobileExists, getProbabilities, updateProbability } from '../services/database';
-import type { UserSpin } from '../types';
+import { saveUserSpin, checkMobileExists, getProbabilities, updateProbability } from '../services/database.ts';
+import type { UserSpin } from '../types.ts';
 
 // Mock Firestore methods
 jest.mock('../firebase', () => ({
