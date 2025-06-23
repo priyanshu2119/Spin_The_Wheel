@@ -1,6 +1,6 @@
 import { collection, addDoc, query, where, getDocs, doc, updateDoc } from 'firebase/firestore';
-import { db } from '../firebase';
-import type { UserSpin, WheelProbability } from '../types';
+import { db } from '../firebase.ts';
+import type { UserSpin, WheelProbability } from '../types.ts';
 
 // Collection names
 const SPINS_COLLECTION = 'user_spins';
