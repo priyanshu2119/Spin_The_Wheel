@@ -106,7 +106,7 @@ Here's what's what in this digital toybox:
 
 ---
 
-Well, that's all folks! Hope this project makes your day a bit more fun and your event a lot more exciting. Feel free to tinker with it - break it, fix it, make it play the Macarena, whatever floats your boat!
+Well, that's all folks! Hope this project makes your day a bit more fun and your event a lot more exciting. Feel free to tinker with it - break it, fix it, make it play the Sitar, whatever floats your boat!
 
 
 Happy coding, and may the odds be ever in your favor! 🎯✨
