@@ -3,14 +3,13 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  // Replace these with your Firebase config values
-  apiKey: "FIREBASE_CONFIG_REMOVED",
-  authDomain: "techno-be-with-you.firebaseapp.com",
-  projectId: "techno-be-with-you",
-  storageBucket: "techno-be-with-you.firebasestorage.app",
-  messagingSenderId: "1080910348193",
-  appId: "FIREBASE_CONFIG_REMOVED",
-  measurementId: "G-QKF1N05T5C"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
